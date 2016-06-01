@@ -15,6 +15,5 @@ def main():
         print(text, "is NOT a palindrome")
 
 
-
 if __name__ == '__main__':
     main()
