@@ -1,4 +1,4 @@
-def passwordgen():
+def passwordgen(passwordlength):
     from random import randrange
     lowercase = "abcdefghijklmnopqrstuvwxyz"
     uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -12,7 +12,7 @@ def passwordgen():
         upc_bool = False
         numbool = False
         symbool = False
-        for i in range(8):
+        for i in range(passwordlength):
             char_to_insert = chars[(randrange(1, len(chars)))]
             pw = pw[:len(pw)] + char_to_insert
             if char_to_insert in lowercase:
@@ -28,7 +28,16 @@ def passwordgen():
 
 
 def main():
-    print(passwordgen())
+    while True:
+        try:
+            length = input("How many characters should your password have? (min 8) ")
+            if int(length) > 7:
+                break
+            print("Your password length can't be less than 8!")
+
+        except ValueError:
+            print("Please enter a number!")
+    print(passwordgen(int(length)))
 
 
 if __name__ == '__main__':
