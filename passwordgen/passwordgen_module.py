@@ -1,4 +1,4 @@
-def passwordgen(passwordlength):
+def passwordgen(passwordlength=8):
     from random import randrange
     lowercase = "abcdefghijklmnopqrstuvwxyz"
     uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
