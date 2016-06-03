@@ -5,15 +5,14 @@ def passwordgen(passwordlength=8):
     numbers = "0123456789"
     symbols = "!@#$%^&*()?"
     chars = lowercase + uppercase + numbers + symbols
-    let_it_go = False
-    while let_it_go is False:
+    while True:
         pw = ""
         lowc_bool = False
         upc_bool = False
         numbool = False
         symbool = False
         for i in range(passwordlength):
-            char_to_insert = chars[(randrange(1, len(chars)))]
+            char_to_insert = chars[randrange(1, len(chars))]
             pw = pw[:len(pw)] + char_to_insert
             if char_to_insert in lowercase:
                 lowc_bool = True
